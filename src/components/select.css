@@ -1,0 +1,22 @@
+.custom-select { position: relative; min-width: 0; }
+.custom-select-trigger { display: flex; align-items: center; gap: 9px; width: 100%; min-height: 42px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 13px; background: var(--panel); color: var(--text); font-size: 12px; text-align: left; }
+.custom-select-trigger:hover { border-color: #484f58; background: var(--surface-hover); }
+.custom-select-trigger[aria-expanded=true] { border-color: var(--accent); box-shadow: 0 0 0 3px #58a6ff13; }
+.select-value { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.select-color-dot { width: 9px; height: 9px; flex-shrink: 0; border-radius: 50%; box-shadow: 0 0 0 2px #ffffff08; }
+.select-chevron { margin-left: auto; color: var(--muted); transition: rotate 200ms var(--ease); }
+.custom-select-trigger[aria-expanded=true] .select-chevron { rotate: 180deg; }
+.custom-select-menu { position: fixed; z-index: 120; overflow-y: auto; overscroll-behavior: contain; padding: 6px; border: 1px solid #3b4553; border-radius: 14px; background: #161b22; box-shadow: 0 14px 40px #0007, 0 3px 8px #0004; transform-origin: top center; animation: pop-in 200ms var(--ease); }
+.custom-select-menu[data-side=above] { transform-origin: bottom center; }
+.custom-select-option { display: flex; align-items: center; gap: 10px; min-height: 38px; padding: 9px 10px; border-radius: 8px; color: #b1bac4; cursor: pointer; font-size: 12px; transition: background-color 160ms var(--ease), color 160ms var(--ease); }
+.custom-select-option > span:not(.select-color-dot) { flex: 1; }
+.custom-select-option[aria-selected=true] { color: #a8cbff; background: #1b304a80; }
+.custom-select-option[data-active=true] { color: var(--text); background: #26364b; }
+.select-option-check { margin-left: auto; opacity: 0; color: var(--accent); transition: opacity 160ms var(--ease); }
+.custom-select-option[aria-selected=true] .select-option-check { opacity: 1; }
+.presence[data-state=closing] > .custom-select-menu { animation: pop-out 180ms var(--ease) both; }
+.custom-select.toolbar-font { width: 94px; }
+.custom-select.toolbar-size { width: 54px; margin-left: 3px; }
+.custom-select.toolbar-font .custom-select-trigger, .custom-select.toolbar-size .custom-select-trigger { min-height: 30px; gap: 5px; padding: 6px; border: 0; border-radius: 7px; background: transparent; color: #b1bac4; }
+.custom-select.toolbar-font .custom-select-trigger:hover, .custom-select.toolbar-size .custom-select-trigger:hover { background: var(--surface-hover); }
+@media (max-width: 460px) { .custom-select.toolbar-font { width: 80px; } .custom-select.toolbar-size { width: 48px; } }
